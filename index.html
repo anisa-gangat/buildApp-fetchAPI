@@ -4,9 +4,76 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fetching data from API </title>
-    
+    <link rel="stylesheet" href="style.css" />
+    <script src="app.js" defer></script>
+    <title>API Project</title>
 </head>
 <body>
+<h1>Build App - Fetch API</h1>
+<h2>Get Your Coffee</h2>
+  <button onclick="getCupOfCoffee()">Coffee</button>
+
+  <pre id="output"></pre>
+
+<style>
+    body {
+    height: 100vh;
+    margin: 0;
+    transition: transition 0.5s ease;
+    display: flex;
+    justify-content: center;  
+    align-items: center;   
+    }
+</style>
+
+<a><script>
+function getRandomColor() {
+    const letters = "0123456789ABCDEF";
+    let color = "#";
+    for (let i = 0; i < 6; i++) {
+      color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
+}
+
+function changeGradient() {
+    const color1 = getRandomColor();
+    const color2 = getRandomColor();
+    document.body.style.background = `linear-gradient(to right, ${color1}, ${color2})`;
+}
+document.body.addEventListener("click", changeGradient);
+
+async function getCupOfCoffee() {
+    try {
+        const response = await fetch('http://localhost:3000/coffee');
+        const coffee = await response.json();
+        document.getElementById('output').textContent = JSON.stringify(coffee, null, 2);
+    } catch (error) {
+        console.error('Error fetching coffee:', error);
+    }
+    }
+</script></a>
+
+
+
+<form>
+    <label for="image">GO:     </label>
+    <input
+    type="text"
+    placeholder="type here..."
+    id="cupOfCoffee"
+    name="cupOfCoffee"
+    />
+
+    <input type="submit" />
+
+    
+
+    </form>
+    <section id="responseContainer"></section>
+
     
 </body>
+
+<footer>ANISA'S...©️</footer>
 </html>

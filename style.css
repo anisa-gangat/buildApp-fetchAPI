@@ -1,3 +1,37 @@
-.body{
-    
+body {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+};
+
+.h1 {
+    flex-direction: row-reverse;
+};
+
+
+
+@media (orientation: landscape) {
+    body {
+    color: rgb(8, 1, 7);
+    }
+};
+@media screen and (max-width: 600px) and (30em <= width <= 50em) and (orientation: landscape){
+    body {
+    color: blue;
+    }
+};
+
+
+html {
+    scroll-behavior: smooth;
+};
+
+@media (min-width: 375px) and (max-width: 425px) {
+.parent-content-container {
+    flex-direction: row;
+}
+};
+
+.footer{
+    flex-direction: row;
+    align-items: flex-end;
+    color: #000000;
 }
